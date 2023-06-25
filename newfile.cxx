@@ -251,3 +251,72 @@ int main()
 
     return 0;
 }
+class Payment  
+{  
+    int amount;  
+    string method;  
+public:  
+    void pay();  
+};
+
+void Payment :: pay()  
+{  
+    cout << "\nEnter payment amount: ";  
+    cin >> amount;  
+
+    cout << "\nSelect payment method: \n1. Credit Card \n2. Debit Card\n3. Net Banking\n";  
+    int choice;  
+    cin >> choice;  
+
+    switch(choice)  
+    {  
+        case 1:  
+            method = "Credit Card";  
+            break;  
+        case 2:  
+            method = "Debit Card";  
+            break;  
+        case 3:  
+            method = "Net Banking";  
+            break;  
+        default:  
+            cout << "\nInvalid option selected!\n";  
+            pay(); // Recursive call to retry payment method selection  
+            break;  
+    }  
+
+    cout << "\n$" << amount << " paid through " << method << ". Thank you!\n";  
+}
+   while (n <= p)
+    {
+        cout << "\nSeat Number: ";
+        cin >> seat;
+
+        if (seat > 32)
+        {
+            cout << "\nThere are only 32 seats available in this bus.";
+        }
+        else
+        {
+            if (strcmp(bus[n].seat[seat / 4][(seat % 4) - 1], "Empty") == 0)
+            {
+                cout << "Enter passenger's name: ";
+                cin >> bus[n].seat[seat / 4][(seat % 4) - 1];
+
+                Payment payment; // payment object created
+                payment.pay(); // payment method called
+
+                break;
+            }
+            else
+            {
+                cout << "The seat no. is already reserved.\n";
+            }
+        }
+    }
+
+    if (n > p)
+    {
+        cout << "Enter correct bus no.\n";
+        goto top;
+    };
