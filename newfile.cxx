@@ -287,36 +287,4 @@ void Payment :: pay()
 
     cout << "\n$" << amount << " paid through " << method << ". Thank you!\n";  
 }
-   while (n <= p)
-    {
-        cout << "\nSeat Number: ";
-        cin >> seat;
-
-        if (seat > 32)
-        {
-            cout << "\nThere are only 32 seats available in this bus.";
-        }
-        else
-        {
-            if (strcmp(bus[n].seat[seat / 4][(seat % 4) - 1], "Empty") == 0)
-            {
-                cout << "Enter passenger's name: ";
-                cin >> bus[n].seat[seat / 4][(seat % 4) - 1];
-
-                Payment payment; // payment object created
-                payment.pay(); // payment method called
-
-                break;
-            }
-            else
-            {
-                cout << "The seat no. is already reserved.\n";
-            }
-        }
-    }
-
-    if (n > p)
-    {
-        cout << "Enter correct bus no.\n";
-        goto top;
-    };
+   
