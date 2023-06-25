@@ -39,7 +39,7 @@ void Bus::install()
     cout << "\nArrival time: ";
     cin >> bus[p].arrival;
 
-    cout << "\nDeparture: ";
+    cout << "\nDeparture time: ";
     cin >> bus[p].depart;
 
     cout << "\nFrom: \t\t\t";
